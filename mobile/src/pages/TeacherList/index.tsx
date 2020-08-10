@@ -5,26 +5,22 @@ import { Feather } from '@expo/vector-icons';
 import { useFocusEffect } from '@react-navigation/native';
 
 import PageHeader from '../../components/PageHeader';
-import TeacherItem, { Teacher } from '../../components/TeacherItem';
+import TeacherItem from '../../components/TeacherItem';
+
+import { Teacher, useFavoriteTeachers } from '../../contexts/favoriteTeachersContext';
 
 import styles from './styles';
 import api from '../../services/api';
-import useFavoritedTeachers from '../../hooks/useFavoritedTeachers';
 
 function TeacherList() {
-  const { isTeacherFavorited, toggleFavoriteTeacher, loadFavorites } = useFavoritedTeachers();
+  const { isTeacherFavorited, toggleFavoriteTeacher } = useFavoriteTeachers();
 
-  const [teachers, setTeachers] = useState([]);
+  const [teachers, setTeachers] = useState<Teacher[]>([]);
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
   const [subject, setSubject] = useState('Matemática');
   const [week_day, setWeek_day] = useState('1');
   const [time, setTime] = useState('10:00');
-
-  // Reload favorites everytime focus on screen
-  useFocusEffect(useCallback(() => {
-    loadFavorites();
-  }, []))
 
   function handleToggleFiltersVisible() {
     setIsFiltersVisible(!isFiltersVisible);
@@ -101,7 +97,7 @@ function TeacherList() {
           paddingBottom: 24
         }}
       >
-        {teachers.map((teacher: Teacher) => (
+        {teachers.map(teacher => (
           <TeacherItem key={teacher.id} teacher={teacher} 
             isFavorited={isTeacherFavorited(teacher.id)}
             toggleFavorite={toggleFavoriteTeacher}

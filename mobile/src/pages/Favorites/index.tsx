@@ -5,17 +5,12 @@ import { useFocusEffect } from '@react-navigation/native';
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
 
-import useFavoritedTeachers from '../../hooks/useFavoritedTeachers';
+import { useFavoriteTeachers } from '../../contexts/favoriteTeachersContext';
 
 import styles from './styles';
 
 function Favorites() {
-  const { favoritedTeachers, isTeacherFavorited, toggleFavoriteTeacher, loadFavorites } = useFavoritedTeachers();
-
-  // Reload favorites everytime focus on screen
-  useFocusEffect(useCallback(() => {
-    loadFavorites();
-  }, []))
+  const { favoriteTeachers, isTeacherFavorited, toggleFavoriteTeacher } = useFavoriteTeachers();
 
   return (
     <View style={styles.container}>
@@ -28,7 +23,7 @@ function Favorites() {
           paddingBottom: 24
         }}
       >
-        {favoritedTeachers.map(teacher => (
+        {favoriteTeachers.map(teacher => (
           <TeacherItem key={teacher.id} teacher={teacher}
             isFavorited={isTeacherFavorited(teacher.id)}
             toggleFavorite={toggleFavoriteTeacher}

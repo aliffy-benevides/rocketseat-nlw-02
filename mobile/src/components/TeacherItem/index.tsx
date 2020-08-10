@@ -6,24 +6,16 @@ import heartOutlineIcon from '../../assets/images/icons/heart-outline.png';
 import unfavoriteIcon from '../../assets/images/icons/unfavorite.png';
 import whatsappIcon from '../../assets/images/icons/whatsapp.png';
 
+import { Teacher } from '../../contexts/favoriteTeachersContext';
+
 import api from '../../services/api';
 
 import styles from './styles';
 
-export interface Teacher {
-  id: number;
-  subject: string;
-  cost: number;
-  name: string;
-  avatar: string;
-  whatsapp: string;
-  bio: string;
-}
-
 interface TeacherItemProps {
   teacher: Teacher;
   isFavorited: boolean;
-  toggleFavorite: (teacher: Teacher) => {};
+  toggleFavorite(teacher: Teacher): void;
 }
 
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher, isFavorited, toggleFavorite }) => {
