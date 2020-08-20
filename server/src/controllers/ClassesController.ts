@@ -16,7 +16,7 @@ export default class ClassesController {
 
     if(!week_day || !subject || !time) {
       return res.status(400).json({
-        error: 'Missing filters to search classes'
+        message: 'Missing filters to search classes'
       })
     }
 
@@ -40,7 +40,6 @@ export default class ClassesController {
 
   async create(req: Request, res: Response) {
     const {
-      name,
       avatar,
       whatsapp,
       bio,
@@ -48,15 +47,18 @@ export default class ClassesController {
       cost,
       schedule
     } = req.body;
+
+    const user_id = req.headers["user-agent"]
   
     const trx = await db.transaction();
   
     try {
-      const insertedUsersIds = await trx('users').insert({
-        name, avatar, whatsapp, bio
-      });
+      await trx('users')
+        .where({ id: user_id })
+        .update({
+          avatar, whatsapp, bio
+        });
     
-      const [ user_id ] = insertedUsersIds;
       const insertedClassesIds = await trx('classes').insert({
         subject, cost, user_id
       });
@@ -71,7 +73,8 @@ export default class ClassesController {
       trx.rollback();
   
       return res.status(400).json({
-        error: 'Unexpected error while creating new class'
+        message: 'Unexpected error while creating new class',
+        error
       })
     }
   }

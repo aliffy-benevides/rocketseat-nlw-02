@@ -1,8 +1,7 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { View, ScrollView, Text, TextInput } from 'react-native';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
-import { useFocusEffect } from '@react-navigation/native';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
@@ -18,9 +17,9 @@ function TeacherList() {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
-  const [subject, setSubject] = useState('Matemática');
-  const [week_day, setWeek_day] = useState('1');
-  const [time, setTime] = useState('10:00');
+  const [subject, setSubject] = useState('');
+  const [week_day, setWeek_day] = useState('');
+  const [time, setTime] = useState('');
 
   function handleToggleFiltersVisible() {
     setIsFiltersVisible(!isFiltersVisible);

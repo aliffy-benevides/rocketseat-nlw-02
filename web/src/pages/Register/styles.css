@@ -1,0 +1,59 @@
+#register-page {
+  width: 100vw;
+}
+
+#register-page main > button {
+  outline: none;
+  border: none;
+  position: relative;
+  top: -5rem;
+}
+
+#register-page main h3 {
+  font: bold 3.6rem Poppins;
+  color: var(--color-text-title);
+  margin-bottom: 2.4rem;
+}
+
+#register-page main h4 {
+  font: bold 1.6rem Poppins;
+  color: var(--color-text-complement);
+  margin-bottom: 2.4rem;
+}
+
+#register-page main form {
+  display: flex;
+  flex-direction: column;
+}
+
+#register-page main .show-password-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+}
+
+#register-page main .submit-button {
+  background: var(--color-secundary);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font: 1.6rem 500 Archivo;
+  color: var(--color-button-text);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: background 0.2s;
+
+  margin-top: 3rem;
+}
+
+#register-page main .submit-button:hover {
+  background: var(--color-secundary-dark);
+}
+
+#register-page main .submit-button:disabled {
+  background: #DCDCE5;
+  color: var(--color-text-complement);
+  cursor: default;
+}

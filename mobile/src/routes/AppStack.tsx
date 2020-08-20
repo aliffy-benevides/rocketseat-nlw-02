@@ -12,15 +12,13 @@ const { Navigator, Screen } = createStackNavigator();
 
 function AppStack() {
   return (
-    <NavigationContainer>
-      <FavoriteTeachersProvider>
-        <Navigator screenOptions={{ headerShown: false }}>
-          <Screen name="Landing" component={Landing} />
-          <Screen name="GiveClasses" component={GiveClasses} />
-          <Screen name="Study" component={StudyTabs} />
-        </Navigator>
-      </FavoriteTeachersProvider>
-    </NavigationContainer>
+    <FavoriteTeachersProvider>
+      <Navigator screenOptions={{ headerShown: false }}>
+        <Screen name="Landing" component={Landing} />
+        <Screen name="GiveClasses" component={GiveClasses} />
+        <Screen name="Study" component={StudyTabs} />
+      </Navigator>
+    </FavoriteTeachersProvider>
   );
 }
 

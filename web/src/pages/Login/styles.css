@@ -1,0 +1,127 @@
+#login-page {
+  width: 100vw;
+}
+
+#login-page main h3 {
+  font: bold 3.6rem Poppins;
+  color: var(--color-text-title);
+  margin-bottom: 3.2rem;
+}
+
+#login-page main form {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-page main .show-password-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+}
+
+#login-page main .remember-forgot-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+#login-page main .remember-forgot-block .remember-block {
+  display: flex;
+  align-items: center;
+}
+
+#login-page main .remember-forgot-block .remember-block input {
+  -webkit-appearance: none;
+  background-color: var(--color-input-background);
+  border: 1px solid var(--color-line-in-white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  outline: none;
+}
+
+#login-page main .remember-forgot-block .remember-block input:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#login-page main .remember-forgot-block .remember-block input:checked {
+  background-color: var(--color-secundary);
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+}
+
+#login-page main .remember-forgot-block .remember-block input:checked::after {
+  content: '\2714';
+  font-size: 2rem;
+  color: var(--color-button-text);
+}
+
+#login-page main .remember-forgot-block .remember-block label {
+  margin-left: 2rem;
+  color: var(--color-text-complement);
+}
+
+#login-page main .remember-forgot-block a {
+  color: var(--color-text-complement);
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+#login-page main .remember-forgot-block a:hover {
+  color: var(--color-text-complement);
+}
+
+#login-page main .submit-button {
+  background: var(--color-secundary);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font: 1.6rem 500 Archivo;
+  color: var(--color-button-text);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: background 0.2s;
+}
+
+#login-page main .submit-button:hover {
+  background: var(--color-secundary-dark);
+}
+
+#login-page main .submit-button:disabled {
+  background: #DCDCE5;
+  color: var(--color-text-complement);
+  cursor: default;
+}
+
+#login-page main footer {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#login-page main footer .register-block {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-base);
+}
+
+#login-page main footer .register-block a {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+#login-page main footer .message {
+  font-size: 1.2rem;
+  color: var(--color-text-complement);
+}
+
+#login-page main footer .message > * {
+  margin-left: 1rem;
+}

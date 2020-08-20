@@ -1,0 +1,52 @@
+#register-completed-page {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#register-completed-page #welcome-screen #welcome-block {
+  flex: 1;
+}
+
+#register-completed-page #welcome-screen #welcome-block .content {
+  align-items: center;
+}
+
+#register-completed-page #welcome-screen #welcome-block .content img {
+  width: 10rem;
+  margin-bottom: 4rem;
+}
+
+#register-completed-page #welcome-screen #welcome-block .content h2 {
+  font: bold 5.4rem Archivo;
+  color: var(--color-title-in-primary);
+  margin-bottom: 2rem;
+}
+
+#register-completed-page #welcome-screen #welcome-block .content p {
+  font: 500 1.6rem Poppins;
+  color: var(--color-text-in-primary);
+}
+
+#register-completed-page #welcome-screen #welcome-block .content button {
+  background: var(--color-secundary);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font: 1.6rem 500 Archivo;
+  color: var(--color-button-text);
+  border-radius: 1rem;
+  padding: 1.5rem 5rem;
+  transition: background 0.2s;
+
+  margin-top: 8rem;
+}
+
+#register-completed-page #welcome-screen #welcome-block .content button:hover {
+  background: var(--color-secundary-dark);
+}
+
+#register-completed-page #welcome-screen #welcome-block .content button:disabled {
+  background: #DCDCE5;
+  color: var(--color-text-complement);
+  cursor: default;
+}

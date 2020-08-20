@@ -23,7 +23,7 @@ export const FavoriteTeachersProvider: React.FC = ({ children }) => {
   const [favoriteTeachers, setFavoriteTeacher] = useState<Teacher[]>([]);
 
   function loadFavorites() {
-    AsyncStorage.getItem('favorites')
+    AsyncStorage.getItem('@Proffy:favorites')
       .then(favorites => {
         if (favorites) {
           setFavoriteTeacher(JSON.parse(favorites));
@@ -53,7 +53,7 @@ export const FavoriteTeachersProvider: React.FC = ({ children }) => {
     }
 
     setFavoriteTeacher(newFavoriteTeachers);
-    return AsyncStorage.setItem('favorites', JSON.stringify(newFavoriteTeachers));
+    return AsyncStorage.setItem('@Proffy:favorites', JSON.stringify(newFavoriteTeachers));
   }
 
   return (

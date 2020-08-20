@@ -1,0 +1,92 @@
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 15
+  },
+  containerWithBorder: {
+    borderTopColor: '#E6E6F0',
+    borderTopWidth: 1
+  },
+
+  block: {
+    flex: 1
+  },
+  label: {
+    fontFamily: 'Poppins_400Regular',
+    fontSize: 14,
+    color: '#9C98A6'
+  },
+  input: {
+    fontFamily: 'Poppins_400Regular',
+    fontSize: 14,
+    color: '#6A6180'
+  }
+});
+
+export default styles;
+// .auth-input-container {
+//   position: relative;
+
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+
+//   padding: 2rem 2rem;
+// }
+
+// .auth-input-container + .auth-input-container {
+//   border-top: solid 1px var(--color-line-in-white);
+// }
+
+// .auth-input-container:focus-within::before {
+//   height: calc(100% - 2rem);
+//   width: 2px;
+//   content: '';
+//   background: var(--color-primary-light);
+//   position: absolute;
+//   top: 1rem;
+//   bottom: 1rem;
+//   left: 0;
+// }
+
+// .auth-input-block {
+//   flex: 1;
+
+//   display: flex;
+//   flex-direction: row;
+  
+//   transition: flex-direction 0.2s;
+// }
+
+// .auth-input-block.with-content,
+// .auth-input-block:focus-within {
+//   flex-direction: column;
+// }
+
+// .auth-input-block label {
+//   flex: 1;
+//   color: var(--color-text-complement);
+//   font-size: 1.6rem;
+
+//   transition: font-size 0.2s;
+// }
+
+// .auth-input-block.with-content label,
+// .auth-input-block:focus-within label {
+//   font-size: 1.2rem;
+// }
+
+// .auth-input-block input {
+//   width: 0;
+//   border: none;
+//   outline: none;
+// }
+
+// .auth-input-block.with-content input,
+// .auth-input-block:focus-within input {
+//   width: auto;
+// }
